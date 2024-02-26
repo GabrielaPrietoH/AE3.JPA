@@ -1,0 +1,149 @@
+package vista;
+
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Persistence;
+import jakarta.persistence.Query;
+import modelo.entidad.Autor;
+import modelo.entidad.Editorial;
+import modelo.entidad.Libreria;
+import modelo.entidad.Libro;
+
+public class Main {
+	
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) {
+		
+		EntityManagerFactory emf = 
+				Persistence.createEntityManagerFactory("JPA_CRISTIAN");
+		
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction et = em.getTransaction();
+		et.begin();
+		
+		/*
+		 * Alta 3 autores.
+		 */
+		
+		//Fecha
+		//SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); sdf.parse("1828-02-08")
+		LocalDate fechaLocal = LocalDate.of(1828, 02, 8);
+        Date fecha = Date.from(fechaLocal.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		
+		Autor a1 = new Autor(null, "George", "Orwell", fecha);
+		Autor a2 = new Autor(null, "Jane", "Austen", new Date()); //Hora actual
+		Autor a3 = new Autor(null, "Jules", "Verne", new Date());
+		
+		
+		
+		em.persist(a1);
+		em.persist(a2);
+		em.persist(a3);
+		
+		
+		
+		
+		/*
+		 * Alta 2 editoriales.
+		 */
+		Editorial e1 = new Editorial(null, "Anaya", "Calle Gran Vía, 2");
+		Editorial e2 = new Editorial(null, "Anaya", "Calle Gran Vía, 2");
+		
+		em.persist(e1);
+		em.persist(e2);
+		
+		/*
+		 * Alta 8 libros.
+		 */		
+		
+		
+		Libro l1 = new Libro(null, "1984", 24.0, a1, e1);
+		Libro l2 = new Libro(null, "Animal Farm", 15.0, a1, e2);
+		Libro l3 = new Libro(null, "Burmese Days", 13.0, a1, e1);
+		Libro l4 = new Libro(null, "Sense and Sensibility", 23.0, a2, e1);
+		Libro l5 = new Libro(null, "Pride and Prejuice", 12.0, a2, e2);
+		Libro l6 = new Libro(null, "Twenty Thousand Leagues Under the Sea", 20.0, a3, e1);
+		Libro l7 = new Libro(null, "Journey to the Center of the Earth", 30.0, a3, e2);
+		Libro l8 = new Libro(null, "Around the World in Eighty Days", 13.0, a3, e1);
+		
+		List<Libro> libros = new ArrayList<>();
+		libros.add(l1);
+		libros.add(l2);
+		libros.add(l3);
+		libros.add(l4);
+		libros.add(l5);
+		libros.add(l6);
+		libros.add(l7);
+		libros.add(l8);
+		
+		em.persist(l1);
+		em.persist(l2);
+		em.persist(l3);
+		em.persist(l4);
+		em.persist(l5);
+		em.persist(l6);
+		em.persist(l7);
+		em.persist(l8);
+		
+		/*
+		 * Alta 2 librerías.
+		 */
+		List<Libro> librosLibreria1 = libros.subList(0, 4); 
+		List<Libro> librosLibreria2 = libros.subList(4, 8);
+		
+		Libreria libreria1 = new Libreria(null, "Stylo", "Familia Stylo", "Calle Río de la Pila");
+		libreria1.setLibros(librosLibreria1);
+		
+		Libreria libreria2 = new Libreria(null, "La casa del libro", "Grupo Planeta", "Calle Gran Vía 56");
+		libreria1.setLibros(librosLibreria2);
+		
+		em.persist(libreria1);
+		em.persist(libreria2);
+		
+		
+		
+		//Consultas
+		
+		/*
+		 * Mostrar todos los libros dados de alta, con su editorial y su autor.
+		 * Si no funciona cambiar de Lazy a Eager, más sencillo
+
+		 */
+		
+		/*
+		 * List<Object[]> resultados = em.createQuery(
+			    "SELECT l.titulo, a.nombre, a.apellidos, e.nombre " +
+			    "FROM Libro l JOIN l.autor a JOIN l.editorial e", Object[].class)
+			.getResultList();
+			
+			for (Object[] resultado : resultados) {
+			    System.out.println("Libro: " + resultado[0] + ", Autor: " + resultado[1] + " " + resultado[2] + ", Editorial: " + resultado[3]);
+			}
+			
+			Integer id, String titulo, double precio, Autor autor, Editorial editorial
+		 */
+		
+		Query query = em.createQuery("Select l FROM Libro l");
+		List<Libro> listadoLibros = query.getResultList();
+		
+		for(Libro l : listadoLibros) {
+			System.out.println("Libro: " + l.getTitulo(), 
+					"autor: " + l.getAutor().getNombre() + " " + l.getAutor().getApellidos() + l.getPrecio() + 
+					"editorial: " + l.getEditorial().getNombre());
+		}
+				
+		//Cierro las transacciones
+		et.commit();
+		em.close();		
+		
+	}
+		
+}

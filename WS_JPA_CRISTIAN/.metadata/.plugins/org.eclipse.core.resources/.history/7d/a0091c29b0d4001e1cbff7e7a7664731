@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<listaArticulos>
+    <articulo id="1">
+        <nombre>Mesa</nombre>
+        <descripcion>Con cuatro patas</descripcion>
+        <stock>13.0</stock>
+        <precio>250.0</precio>
+    </articulo>
+    <articulo id="1">
+        <nombre>Silla</nombre>
+        <descripcion>Estilo moderno</descripcion>
+        <stock>16.0</stock>
+        <precio>65.0</precio>
+    </articulo>
+    <articulo id="1">
+        <nombre>Lámpara</nombre>
+        <descripcion>Con luz cálida</descripcion>
+        <stock>40.0</stock>
+        <precio>46.0</precio>
+    </articulo>
+</listaArticulos>

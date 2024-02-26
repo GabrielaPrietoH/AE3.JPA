@@ -1,0 +1,41 @@
+package vista;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+
+import modelo.entidad.Articulo;
+
+/**
+ * Clase Main que transforma un objeto en un fichero
+ * de formato XML
+ */
+public class Main {
+	
+	
+	public static void main(String[] args) {
+		
+		JAXBContext contexto;
+		
+		try {
+			
+			contexto = JAXBContext.newInstance(Articulo.class);
+		} catch (JAXBException e) {
+			System.out.println("Error creando el contexto");
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			return;
+		}
+		
+		Marshaller m;
+		try {
+			m = contexto.createMarshaller();
+			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+			
+			Articulo a = new Articulo(1,"Mesa", "Con cuatro patas", 13.0, 250.0);
+			
+			m.marshal(a, System.out);
+		}
+	}
+
+}

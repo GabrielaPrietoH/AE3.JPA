@@ -1,0 +1,37 @@
+package vista;
+
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+
+import controlador.List;
+import controlador.Persona;
+import controlador.Query;
+import controlador.Usuario;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Persistence;
+import modelo.entidad.Autor;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		EntityManagerFactory emf = 
+				Persistence.createEntityManagerFactory("JPA_CRISTIAN");
+		
+		EntityManager em = null;
+		
+		//Fecha
+		LocalDate localDate = LocalDate.of(1903, 6, 25); 
+	    Date fechaNacimiento = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		
+		Autor a = new Autor(null, "George", "Orwell", fechaNacimiento);
+		
+		
+		
+		
+	}
+		
+}

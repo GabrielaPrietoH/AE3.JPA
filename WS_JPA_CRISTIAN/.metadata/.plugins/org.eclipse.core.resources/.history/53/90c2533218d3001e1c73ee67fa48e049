@@ -1,0 +1,8 @@
+package modelo.entidad;
+
+@Entity
+public class Autor {
+	
+	@Id
+	@Generate 
+}

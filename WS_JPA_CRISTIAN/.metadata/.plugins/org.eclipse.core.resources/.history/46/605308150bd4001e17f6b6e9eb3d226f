@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<listaArticulos>
+    <articulo id="1">
+        <nombre>Mesa</nombre>
+        <descripcion>Con cuatro patas</descripcion>
+        <stock>13.0</stock>
+        <precio>250.0</precio>
+    </articulo>
+    <articulo id="1">
+        <nombre>Mesa</nombre>
+        <descripcion>Con cuatro patas</descripcion>
+        <stock>13.0</stock>
+        <precio>250.0</precio>
+    </articulo>
+    <articulo id="1">
+        <nombre>Mesa</nombre>
+        <descripcion>Con cuatro patas</descripcion>
+        <stock>13.0</stock>
+        <precio>250.0</precio>
+    </articulo>
+</listaArticulos>

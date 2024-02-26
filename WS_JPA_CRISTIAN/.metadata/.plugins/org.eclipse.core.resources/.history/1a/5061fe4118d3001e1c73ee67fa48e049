@@ -1,0 +1,16 @@
+package modelo.entidad;
+
+import java.sql.Date;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+
+@Entity
+public class Autor {
+	
+	private int id;
+	private String nombre, apellidos;
+	@Temporal(TemporalType.DATE)
+	private Date fechaNacimiento;
+}
