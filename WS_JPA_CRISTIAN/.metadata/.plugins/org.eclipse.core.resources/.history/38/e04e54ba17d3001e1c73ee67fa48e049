@@ -1,6 +1,0 @@
-package modelo.entidad;
-
-@Entity
-public class Autor {
-
-}
