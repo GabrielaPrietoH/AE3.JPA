@@ -7,11 +7,11 @@
 
  
 
-###Asignatura	: 	Acceso a Datos 
+### Asignatura	: 	Acceso a Datos 
  
-###Grupo		:	8 
+### Grupo		:	8 
 
-###Integrantes	:	Cristian Quiceno Laverde 
+### Integrantes	:	Cristian Quiceno Laverde 
 
                   Gabriela Prieto Herrera 
 
