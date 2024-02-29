@@ -11,7 +11,8 @@
  
 ### Grupo		:	8 
 
-### Integrantes	:	Cristian Quiceno Laverde 
+### Integrantes	:	
+                  Cristian Quiceno Laverde 
 
                   Gabriela Prieto Herrera 
 
