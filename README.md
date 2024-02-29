@@ -62,3 +62,10 @@ Aplicando JAXB, coger la clase ‘Articulo’ de la actividad 1 y serializar una
 
 ## Contenido
 
+
+## Conclusión 
+
+En conclusión, la actividad proporcionó a cada miembro del grupo la oportunidad de aplicar y consolidar sus conocimientos en el desarrollo de aplicaciones Java utilizando JPA y JAXB. El diseño e implementación de modelos de datos complejos, la configuración de relaciones bidireccionales y la realización de consultas a través de EntityManager ofrecieron un sólido ejercicio práctico. 
+La colaboración durante la integración de los modelos individuales permitió identificar y abordar desafíos en las relaciones, promoviendo el aprendizaje conjunto y la resolución efectiva de problemas. Aunque surgen dificultades técnicas para algunos integrantes, la toma de decisiones en equipo, como la elección de presentar el trabajo de Cristian, demuestra una gestión eficiente de recursos y una orientación hacia la entrega de resultados de calidad.La actividad también destacó la importancia de la documentación clara y detallada, tanto en el código como en las consultas realizadas, facilitando la comprensión y revisión del trabajo por parte de los demás miembros del grupo. 
+En resumen, la actividad fortaleció la comprensión y aplicación de conceptos clave en el desarrollo de aplicaciones Java empresariales y fomentó la colaboración efectiva en la resolución de desafíos técnicos. 
+
