@@ -60,9 +60,6 @@ Aplicando JAXB, coger la clase ‘Articulo’ de la actividad 1 y serializar una
 ![2](https://github.com/GabrielaPrietoH/AE3.JPA/assets/124418682/89f809ab-27b6-4e20-a4be-f0434fcb6ad4)
 
 
-![1](https://github.com/GabrielaPrietoH/AE3.JPA/assets/124418682/7f6d7bb8-4f43-43dc-8cc3-28dd72079027)
-
-
 ![3](https://github.com/GabrielaPrietoH/AE3.JPA/assets/124418682/dd79749a-7ff2-494b-b5bc-4f5f61d51703)
 
 
